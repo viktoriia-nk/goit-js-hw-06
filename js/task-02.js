@@ -16,22 +16,19 @@ const ingredients = [
 
 
 
-const createIngredient = (ingredients)=>{
+
+
   const ingredientsListEl = document.querySelector('#ingredients')
-  // console.log(ingredientsListEl)
-  let arr =[]
-  for (let i = 0; i<= ingredients.length-1; i+=1 ){
-    let liEl = document.createElement("li")
-    
-    liEl.classList.add("item")
-    liEl.textContent = ingredients[i]
-  
-    arr.push(liEl)
-   
-  }
-  ingredientsListEl.append(...arr)
-  return ingredientsListEl
 
-}
+  const liEl = ingredients.map(name =>{
+    const ingredient = document.createElement("li")
+    ingredient.classList.add("item")
+    ingredient.textContent = name
+    return ingredient
+  })
 
-console.log(createIngredient(ingredients))
+  ingredientsListEl.append(...liEl)
+ 
+
+console.log(ingredientsListEl)
+
