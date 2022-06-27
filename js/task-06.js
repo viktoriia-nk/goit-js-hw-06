@@ -31,8 +31,10 @@ const formInputEl = document.querySelector("#validation-input");
 const dataLength = document.querySelector('input[data-length = "6"]')
 formInputEl.addEventListener("blur", (event) => {
         if(event.target.value.length === Number(dataLength.dataset.length)){
-           formInputEl.style.borderColor = "#4caf50"
+           formInputEl.classList.add("valid")
+           formInputEl.classList.remove("invalid")
         }else {
-            formInputEl.style.borderColor = "#f44336"
+            formInputEl.classList.add("invalid")
+            formInputEl.classList.remove("valid")
         }
   });
